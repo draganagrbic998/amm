@@ -8,23 +8,19 @@ import com.hierynomus.protocol.commons.EnumWithValue;
 public class FtpFile implements FileElement {
 
     private final FileIdBothDirectoryInformation file;
-    private final String name;
-    private final boolean isDirectory;
 
     public FtpFile(FileIdBothDirectoryInformation file) {
         this.file = file;
-        this.name = file.getFileName();
-        this.isDirectory = EnumWithValue.EnumUtils.isSet(file.getFileAttributes(), FileAttributes.FILE_ATTRIBUTE_DIRECTORY);
     }
 
     @Override
     public String getName() {
-        return name;
+        return file.getFileName();
     }
 
     @Override
     public boolean isDirectory() {
-        return isDirectory;
+        return EnumWithValue.EnumUtils.isSet(file.getFileAttributes(), FileAttributes.FILE_ATTRIBUTE_DIRECTORY);
     }
 
     @Override
@@ -34,7 +30,7 @@ public class FtpFile implements FileElement {
 
     @Override
     public String toString() {
-        return name;
+        return file.getFileName();
     }
 
 }

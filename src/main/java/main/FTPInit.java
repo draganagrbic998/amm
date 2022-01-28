@@ -76,12 +76,14 @@ public class FTPInit {
             String password = Configuration.smbPassword;
             String domain = Configuration.smbDomain;
 
+            FtpDirectory.openConnection(host, username, password, domain, share, archiveDir);
+
             ArrayList<FileListener> listeners = new ArrayList<>();
 
             for (String dirPath : Configuration.smbDirs) {
                 LOG.info("ADDING DIR: " + dirPath);
 
-                FtpDirectory polledDirectory = new FtpDirectory(host, share, dirPath, archiveDir, username, password, domain);
+                FtpDirectory polledDirectory = new FtpDirectory(dirPath);
                 FileListener listener = new FileListener(polledDirectory);
                 listeners.add(listener);
 
@@ -131,6 +133,7 @@ public class FTPInit {
             dp.stop();
             dp.stopNow();
         }
+        FtpDirectory.closeConnection();
     }
 
 }
