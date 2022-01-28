@@ -76,7 +76,8 @@ public class FileListener implements DirectoryListener, IoErrorListener, Initial
     private void parseFile(String fileName) {
         try {
             String dirPath = directory.getDirPath() + "/" + fileName;
-            BufferedReader reader = new BufferedReader(new InputStreamReader(directory.openFile(fileName).getInputStream()));
+            File file = directory.openFile(fileName);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(file.getInputStream()));
 
             IecMessage iecMessage = new IecMessage();
             Transformer.setIecHeader(iecMessage, dirPath);
@@ -97,6 +98,7 @@ public class FileListener implements DirectoryListener, IoErrorListener, Initial
             System.out.println(new Gson().toJson(iecMessage));  //after you check that console print is fine, send to server
 
             reader.close();
+            file.close();
             archiveFile(fileName);
         } catch (Exception e) {
             e.printStackTrace();
@@ -113,7 +115,6 @@ public class FileListener implements DirectoryListener, IoErrorListener, Initial
 
             fromFile.deleteOnClose();
             fromFile.close();
-            // for some reason only when I kill the server the files disappears...
         } catch (Exception e) {
             e.printStackTrace();
         }
