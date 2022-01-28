@@ -14,17 +14,14 @@ import org.apache.commons.logging.LogFactory;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class FileListener implements DirectoryListener, IoErrorListener, InitialContentListener {
 
     private static final Log LOG = LogFactory.getLog(FileListener.class);
 
     private final FtpDirectory directory;
-    private final Set<String> waiting = new HashSet<>();
+    private final List<String> waiting = new LinkedList<>();
 
     public FileListener(FtpDirectory directory) {
         this.directory = directory;
@@ -43,7 +40,7 @@ public class FileListener implements DirectoryListener, IoErrorListener, Initial
             extension = event.getFileElement().toString().substring(i + 1);
         }
 
-        if (!isDir && extension.equals("txt")) {
+        if (!isDir && extension.equals("txt") && !waiting.contains(event.getFileElement().toString())) {
             waiting.add(event.getFileElement().toString());
         }
 
@@ -71,8 +68,9 @@ public class FileListener implements DirectoryListener, IoErrorListener, Initial
     }
 
     public void processQueued() {
-        waiting.forEach(this::parseFile);
-        waiting.clear();
+        while (!waiting.isEmpty()){
+            parseFile(waiting.remove(0));
+        }
     }
 
     private void parseFile(String fileName) {
