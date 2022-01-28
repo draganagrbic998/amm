@@ -1,0 +1,183 @@
+package main;
+
+import com.github.drapostolos.rdp4j.*;
+import eu.nites.esb.iec.common.message.base.IecMessage;
+import eu.nites.esb.iec.common.message.base.NounEnum;
+import eu.nites.esb.iec.common.message.base.Payload;
+import eu.nites.esb.iec.common.message.base.VerbEnum;
+import eu.nites.esb.iec.common.message.meterreadings.MeterReadings;
+import jcifs.smb.SmbException;
+import jcifs.smb.SmbFile;
+import jcifs.smb.SmbFileInputStream;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+public class FileListener implements DirectoryListener, IoErrorListener, InitialContentListener {
+
+    private final FtpDirectory myDirectory;
+    private static final Log LOG = LogFactory.getLog(FileListener.class);
+    private List<String> waiting = new ArrayList<>();
+    private List<String> inProgress = new ArrayList<String>();
+
+    public void processQueued() {
+
+        for (String file: waiting) {
+            if (!inProgress.contains(file)) {
+                inProgress.add(file);
+                parseFile(file);
+            }
+        }
+
+        waiting = new ArrayList<String>();
+    }
+
+    public FileListener(FtpDirectory dir) {
+        myDirectory = dir;
+    }
+
+    @Override
+    public void fileAdded(FileAddedEvent event) {
+		LOG.info("Added: " + (event.getFileElement().isDirectory() ? "DIR--" : "FILE-") + event.getFileElement()
+				+ (event.getFileElement().isDirectory() ? " - Since the file is a DIRECTORY it will NOT be processed."
+						: ""));
+
+
+
+        String extension = "";
+
+        int i = event.getFileElement().toString().lastIndexOf('.');
+        if (i > 0) {
+            extension = event.getFileElement().toString().substring(i + 1);
+        }
+/*
+		LOG.info("File extension is:: " + extension + (extension.equals("txt") ? " therfore it will be proccessed."
+				: " - which is not supported for proccessing."));
+*/
+        if (extension.equals("txt") && !event.getFileElement().isDirectory()) {
+
+            try {
+                if (!waiting.contains(event.getFileElement().toString()) && !inProgress.contains(event.getFileElement().toString()))
+                    waiting.add(event.getFileElement().toString() + "***" + event.getFileElement().getName());
+            } catch (Exception e) {
+                LOG.error(e.getMessage());
+                LOG.error("FILE NOT PROCESSED : " + event.toString());
+            }
+
+        }
+
+    }
+
+    @Override
+    public void fileRemoved(FileRemovedEvent event) {
+       LOG.info("Removed: " + event.getFileElement());
+    }
+
+    @Override
+    public void fileModified(FileModifiedEvent event) {
+       // LOG.info("Modified: " + event.getFileElement());
+    }
+
+    @Override
+    public void ioErrorCeased(IoErrorCeasedEvent event) {
+      //  LOG.severe("I/O error ceased.");
+    }
+
+    @Override
+    public void ioErrorRaised(IoErrorRaisedEvent event) {
+      //  LOG.severe("I/O error raised!");
+     //   event.getIoException().printStackTrace();
+    }
+
+    @Override
+    public void initialContent(InitialContentEvent event) {
+        LOG.info("Initial content of the folder content: ^" + event.toString());
+    }
+
+    private void parseFile(String event) {
+        SmbFile f = null;
+        SmbFileInputStream in = null;
+        BufferedReader reader = null;
+
+        String[] pices = event.split("\\*\\*\\*");
+
+        try {
+            f = new SmbFile(pices[0], myDirectory.getAuth());
+
+            in = new SmbFileInputStream(f);
+            reader = new BufferedReader(new InputStreamReader(in));
+
+            String line = "";
+
+            //LOG.info("STARTING CONVERSION");
+            IecMessage iecMessage = new IecMessage();
+            String correlationID = UUID.randomUUID().toString();
+            iecMessage = Transformer.setHeader(iecMessage, VerbEnum.CREATE, NounEnum.METER_READINGS, correlationID, pices[0]);
+
+
+            Payload payload = new Payload();
+            MeterReadings mrs = new MeterReadings();
+            mrs.setMeterReading(new ArrayList<>());
+            payload.setBasePayload(mrs);
+            iecMessage.setPayload(payload);
+            int i=0;
+            while ((line = reader.readLine()) != null) {
+                i++;
+                iecMessage = Transformer.convertToIec(line, iecMessage, pices[0]);
+            }
+
+            String split[] = event.split("/");
+
+            String worker = split[split.length-2];
+            worker = worker.replaceAll("/","");
+
+            iecMessage.getHeader().setWorker(worker.trim()); // Check if needs to be reduced;
+            Transformer.sendIecMessage(iecMessage, pices[0]);
+           // LOG.info("Message sent to SendMeterReadings");
+            archive(pices[1]);
+
+            inProgress.remove(event);
+            //archive(event.getFileElement().getName());
+
+
+        } catch (Exception e) {
+            //e.printStackTrace();
+            LOG.fatal("Error while parsing or opening the file on location : " + pices[0].toString()  + "Exception message:" + e.toString());
+        } finally {
+
+
+            try {
+                in.close();
+                reader.close();
+            } catch (Exception e) {
+                LOG.fatal("Error while closing the file/stream. Message:" + e.getMessage());
+                LOG.fatal("Caused by file : " + pices[0].toString() );
+            }
+
+        }
+    }
+
+    private void archive(String filename) throws MalformedURLException, SmbException {
+        LOG.info("Moving file: " + myDirectory.getHost() + filename + " to: " + myDirectory.getArchiveUrl() + filename);
+        SmbFile smbFromFile = new SmbFile(myDirectory.getHost() + filename, myDirectory.getAuth());
+
+        SmbFile smbToFile = new SmbFile(myDirectory.getArchiveUrl() + filename, myDirectory.getAuth());
+
+        int last = filename.lastIndexOf('.');
+        String[] arr =  {filename.substring(0, last), filename.substring(last)};
+        int i=1;
+        while (smbToFile.exists()){
+            smbToFile = new SmbFile(myDirectory.getArchiveUrl() + arr[0]+" (" + i + + ')' + arr[1], myDirectory.getAuth());
+            i++;
+        }
+
+        smbFromFile.renameTo(smbToFile);
+    }
+
+}

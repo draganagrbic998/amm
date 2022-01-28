@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="SapAdapter:ejb">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SapAdapter</module>
+        <packaging>ejb</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SapAdapter-1.0-SNAPSHOT.jar">
+      <element id="artifact" artifact-name="SapAdapter:ejb exploded" />
+    </root>
+  </artifact>
+</component>

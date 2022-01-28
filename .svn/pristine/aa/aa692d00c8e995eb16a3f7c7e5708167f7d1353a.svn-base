@@ -1,0 +1,70 @@
+#URLS
+EPS_BASE_URL: http://SBGINSESB01:8089/
+EPS_AMM: AMMMeterReadings/SendMeterReadings?wsdl
+
+#SMB Folder config
+SMB_BASE_URL: smb://10.31.6.33/NITES/
+SMB_ARCHIVE_URL: smb://10.31.6.33/NITES/ARCH/
+SMB_USERNAME: nvignjevic
+SMB_PASSWORD: Nites123
+SMB_CHECK_INTERVAL_SEC: 300
+CONFIG_RELOAD_TIME: 480
+SMB_HOST: AMM/
+SMB_USER1: AMM/anes_gicevic/
+SMB_USER2: AMM/belma_biberovic/
+SMB_USER3: AMM/bisenija_djekic/
+SMB_USER4: AMM/branislav_panovic/
+SMB_USER5: AMM/branko_micic/
+SMB_USER6: AMM/dragan_dzopalic/
+SMB_USER7: AMM/dragoslav_vulicevic/
+SMB_USER8: AMM/goran_divljakovic/
+SMB_USER9: AMM/ivan_nikolic/
+SMB_USER10: AMM/janko_simon/
+SMB_USER11: AMM/jasmina_hubanic/
+SMB_USER12: AMM/jovan_nikolic/
+SMB_USER13: AMM/jovica_petrovic/
+SMB_USER14: AMM/ljiljana_perisic/
+SMB_USER15: AMM/marijana_acimovic/
+SMB_USER16: AMM/marko_andrejic/
+SMB_USER17: AMM/marko_simic/
+SMB_USER18: AMM/milan_lazovic/
+SMB_USER19: AMM/milica_milenovic/
+SMB_USER20: AMM/mirjana_jankovic/
+SMB_USER21: AMM/mirjana_pendic/
+SMB_USER22: AMM/miroslav_simic/
+SMB_USER23: AMM/nemanja_perisic/
+SMB_USER24: AMM/olivera_markovic/
+SMB_USER25: AMM/petar_jovanovic/
+SMB_USER26: AMM/raco_vuckovic/
+SMB_USER27: AMM/radmila_kovacevic/
+SMB_USER28: AMM/ruzica_nedeljkovic/
+SMB_USER29: AMM/slavomir_majdak/
+SMB_USER30: AMM/slobodan_vasovic/
+SMB_USER31: AMM/srdjan_ilic/
+SMB_USER32: AMM/srdjan_stojanovic/
+SMB_USER33: AMM/stanko_zejak/
+SMB_USER34: AMM/svetlana_sretenovic/
+SMB_USER35: AMM/svvetlana_milenkovic/
+SMB_USER36: AMM/vinko_dobric/
+SMB_USER37: AMM/vladimir_topalovic/
+SMB_USER38: AMM/zemina_lakota/
+SMB_USER39: AMM/zizo_ibraimovic/
+SMB_USER40: AMM/zoran_mihaljinec/
+SMB_USER41: AMM/zorica_bojanovic/
+SMB_USER42: AMM/danijel_miljkovic/
+SMB_USER43: AMM/nikola_jovanovic/
+SMB_USER44: AMM/sasa_markovic/
+SMB_USER45: AMM/novica_stefanovic/
+SMB_USER46: AMM/nebojsa_stojanovic/
+SMB_USER47: AMM/milan_sretenovic/
+SMB_USER48: AMM/ivan_damnjanovic/
+SMB_USER49: AMM/milos_bazalac/
+SMB_USER50: AMM/miroslav_bezbradica/
+SMB_USER51: AMM/danijela_milosavljevic/
+SMB_USER52: AMM/ramiz_ahmetovic/
+SMB_USER53: AMM/bosko_ratkovic/
+#SMB_USER1: AMM/lazar_tesic_test/
+#SMB_USER2: AMM/milos_kandic_test/
+#ARCH/AMM/lazar_tesic_test
+#ARCH/AMM/milos_kandic_test
+

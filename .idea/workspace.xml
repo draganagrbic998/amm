@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="07960973-d441-411c-9773-6b1ab9a89b42" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="KotlinCodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectId" id="1e5DnVSCApPBx8rz1RShrsz6kVA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.40804598" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Doktorske\1.Godina\NITES_SVN\Adapter\Development\AMM\AMMAdapter\src\main\resources\META-INF" />
+      <recent name="G:\Doktorske\1.Godina\NITES_SVN\Adapter\Development\AMM\AMMAdapter\src\main\java\config" />
+      <recent name="G:\Doktorske\1.Godina\NITES_SVN\Adapter\Development\AMM\SapAdapter\src\main\java\main" />
+      <recent name="D:\Posao\NITES-SVN\Adapter\Production\SAPAdapterIntegrated\SapAdapter\src\test\java" />
+      <recent name="D:\Posao\NITES-TEMP\Production\SapAdapter\src\main\resources\META-INF" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="config" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install:install-file \    -Dfile=G:\Doktorske\1. godina\NITES SVN\Adapter\Production\SAPAdapterIntegrated\SapAdapter\libs\sapidoc3 \    -DgroupId=com.sap.jco \    -DartifactId=sapidoc \    -Dversion=3.1 \    -Dpackaging=jar \    -DgeneratePom=true" />
+      <command value="mvn install:install-file \    -Dfile=G:\Doktorske\1.Godina\NITES SVN\Adapter\Production\SAPAdapterIntegrated\SapAdapter\libs\sapidoc3 \    -DgroupId=com.sap.jco \    -DartifactId=sapidoc \    -Dversion=3.1 \    -Dpackaging=jar \    -DgeneratePom=true" />
+      <command value="mvn install:install-file \    -Dfile=G:\Doktorske\1.Godina\NITES_SVN\Adapter\Production\SAPAdapterIntegrated\SapAdapter\libs\sapidoc3 \    -DgroupId=com.sap.jco \    -DartifactId=sapidoc \    -Dversion=3.1 \    -Dpackaging=jar \    -DgeneratePom=true    " />
+      <command value="mvn install:install-file \    -Dfile=G:\Doktorske\1.Godina\NITES_SVN\Adapter\Production\SAPAdapterIntegrated\SapAdapter\libs\sapjco3.jar \    -DgroupId=com.sap.jco \    -DartifactId=sapidoc \    -Dversion=3.1 \    -Dpackaging=jar \    -DgeneratePom=true            " />
+      <command value="mvn install:install-file \    -Dfile=G:\Doktorske\1.Godina\NITES_SVN\Adapter\Production\SAPAdapterIntegrated\SapAdapter\libs\sapjco3.jar \    -DgroupId=com.sap.jco \    -DartifactId=sapjco \    -Dversion=3.1 \    -Dpackaging=jar \    -DgeneratePom=true        " />
+      <command value="mvn install:install-file \    -Dfile=G:\Doktorske\1.Godina\NITES_SVN\Adapter\Production\SAPAdapterIntegrated\SapAdapter\libs\sapidoc3.jar \    -DgroupId=com.sap.jco \    -DartifactId=sapidoc \    -Dversion=3.1 \    -Dpackaging=jar \    -DgeneratePom=true    " />
+      <command value="    mvn install:install-file \    -Dfile=G:\Doktorske\1.Godina\NITES_SVN\Adapter\Production\SAPAdapterIntegrated\SapAdapter\libs\esb-message-ieccommon-1.0-SNAPSHOT.jar \    -DgroupId=eu.nites.esb.message.iec \    -DartifactId=esb-message-ieccommon \    -Dversion=1.0-SNAPSHOT \    -Dpackaging=jar \    -DgeneratePom=true        " />
+      <command value="mvn install:install-file \    -Dfile=G:\Doktorske\1.Godina\NITES_SVN\Adapter\Production\SAPAdapterIntegrated\SapAdapter\libs\esb-message-ieccommon-1.0-SNAPSHOT.jar \    -DgroupId=eu.nites.esb.message.iec \    -DartifactId=esb-message-ieccommon \    -Dversion=1.0-SNAPSHOT \    -Dpackaging=jar \    -DgeneratePom=true    " />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="TestSynchronizeReadings" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AMMAdapter" />
+      <option name="PACKAGE_NAME" value="inbound" />
+      <option name="MAIN_CLASS_NAME" value="inbound.TestSynchronizeReadings" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestSynchronizeReadings" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Nada\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="07960973-d441-411c-9773-6b1ab9a89b42" name="Default Changelist" comment="" />
+      <created>1593602726535</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593602726535</updated>
+      <workItem from="1593602729858" duration="5213000" />
+      <workItem from="1593619496422" duration="9821000" />
+      <workItem from="1593690028103" duration="7145000" />
+      <workItem from="1594028359569" duration="18222000" />
+      <workItem from="1595083304563" duration="827000" />
+      <workItem from="1595103339412" duration="5394000" />
+      <workItem from="1595150307127" duration="1076000" />
+      <workItem from="1595151495516" duration="63000" />
+      <workItem from="1595151576153" duration="51000" />
+      <workItem from="1595151674736" duration="728000" />
+      <workItem from="1595152422971" duration="10004000" />
+      <workItem from="1595234967029" duration="700000" />
+      <workItem from="1595238898761" duration="305000" />
+      <workItem from="1595240536841" duration="4034000" />
+      <workItem from="1595272146985" duration="9028000" />
+      <workItem from="1595310869154" duration="7407000" />
+      <workItem from="1595356644741" duration="1510000" />
+      <workItem from="1595593252553" duration="8000" />
+      <workItem from="1595593331101" duration="411000" />
+      <workItem from="1597075884353" duration="370000" />
+      <workItem from="1597420526701" duration="219000" />
+      <workItem from="1597420866784" duration="93000" />
+      <workItem from="1598003054458" duration="18000" />
+      <workItem from="1598003085708" duration="63000" />
+      <workItem from="1600036561394" duration="161000" />
+      <workItem from="1600036778439" duration="1243000" />
+      <workItem from="1600253726986" duration="39000" />
+      <workItem from="1600253811027" duration="1542000" />
+      <workItem from="1600258841810" duration="2804000" />
+      <workItem from="1600418796199" duration="4920000" />
+      <workItem from="1600435971793" duration="202000" />
+      <workItem from="1600436197705" duration="3262000" />
+      <workItem from="1600440343922" duration="740000" />
+      <workItem from="1600683243401" duration="614000" />
+      <workItem from="1600783784328" duration="621000" />
+      <workItem from="1601570715731" duration="1747000" />
+      <workItem from="1601623399918" duration="700000" />
+      <workItem from="1601888527071" duration="9044000" />
+      <workItem from="1601916260953" duration="1837000" />
+      <workItem from="1601970844276" duration="1690000" />
+      <workItem from="1601977979425" duration="7012000" />
+      <workItem from="1602005132447" duration="603000" />
+      <workItem from="1603182360330" duration="22000" />
+      <workItem from="1603182585376" duration="9000" />
+      <workItem from="1603274739955" duration="39000" />
+      <workItem from="1603437534615" duration="2695000" />
+      <workItem from="1603488360018" duration="1302000" />
+      <workItem from="1603562276470" duration="1214000" />
+      <workItem from="1603808422351" duration="1312000" />
+      <workItem from="1603829571190" duration="632000" />
+      <workItem from="1603870584110" duration="6754000" />
+      <workItem from="1603960675658" duration="226000" />
+      <workItem from="1604763198136" duration="1123000" />
+      <workItem from="1604766065855" duration="699000" />
+      <workItem from="1604795128818" duration="1295000" />
+      <workItem from="1604914599277" duration="8498000" />
+      <workItem from="1604940875770" duration="1820000" />
+      <workItem from="1605001281335" duration="3554000" />
+      <workItem from="1605349998834" duration="2004000" />
+      <workItem from="1605452838233" duration="1519000" />
+      <workItem from="1606583873442" duration="74000" />
+      <workItem from="1606584102917" duration="45000" />
+      <workItem from="1606834007966" duration="3474000" />
+      <workItem from="1606898184749" duration="499000" />
+      <workItem from="1607001381184" duration="179000" />
+      <workItem from="1607384019027" duration="746000" />
+      <workItem from="1607416535731" duration="4267000" />
+      <workItem from="1608106235583" duration="25000" />
+      <workItem from="1608106273284" duration="619000" />
+      <workItem from="1608565206932" duration="39000" />
+      <workItem from="1608824328966" duration="4965000" />
+      <workItem from="1608894439801" duration="4165000" />
+      <workItem from="1608914038922" duration="51000" />
+      <workItem from="1608914119269" duration="413000" />
+      <workItem from="1609227525981" duration="659000" />
+      <workItem from="1609228320921" duration="11000" />
+      <workItem from="1611305560262" duration="664000" />
+      <workItem from="1611356998734" duration="18000" />
+      <workItem from="1611404782020" duration="16000" />
+      <workItem from="1612189203920" duration="1469000" />
+      <workItem from="1619446951993" duration="702000" />
+      <workItem from="1620670283158" duration="33000" />
+      <workItem from="1620675153326" duration="2032000" />
+      <workItem from="1621520368990" duration="1470000" />
+      <workItem from="1621859885367" duration="625000" />
+      <workItem from="1623327052663" duration="2381000" />
+      <workItem from="1630321875520" duration="776000" />
+      <workItem from="1630477815560" duration="852000" />
+      <workItem from="1630663078047" duration="1324000" />
+      <workItem from="1631490202436" duration="1220000" />
+      <workItem from="1643362772539" duration="8257000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

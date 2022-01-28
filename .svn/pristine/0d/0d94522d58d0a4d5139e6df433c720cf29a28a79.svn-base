@@ -1,0 +1,66 @@
+package main;
+
+import com.github.drapostolos.rdp4j.spi.FileElement;
+import com.github.drapostolos.rdp4j.spi.PolledDirectory;
+import jcifs.smb.NtlmPasswordAuthentication;
+import jcifs.smb.SmbFile;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.io.IOException;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class FtpDirectory implements PolledDirectory {
+
+    private static final Log LOG = LogFactory.getLog(FtpDirectory.class);
+
+    private final String host;
+    private final String workingDirectory;
+    private final String domain;
+    private final String username;
+    private final String password;
+    private final String archiveUrl;
+    private final NtlmPasswordAuthentication auth;
+
+    public FtpDirectory(String host, String workingDirectory, String archiveUrl, String domain, String username,
+                        String password) {
+        this.host = host;
+        this.workingDirectory = workingDirectory;
+        this.archiveUrl = archiveUrl;
+        this.domain = domain;
+        this.username = username;
+        this.password = password;
+        this.auth = new NtlmPasswordAuthentication(domain, username, password);
+    }
+
+    public Set<FileElement> listFiles() throws IOException {
+        Set<FileElement> result = new LinkedHashSet<FileElement>();
+
+        String url = host;
+
+        try {
+            SmbFile dir = new SmbFile(url, auth);
+            for (SmbFile f : dir.listFiles()) {
+                result.add(new FtpFile(f));
+            }
+        } catch (Exception e) {
+            LOG.warn("SMBDirectory not found! with ERROR : " + e.getMessage());
+        }
+
+        return result;
+
+    }
+
+    public NtlmPasswordAuthentication getAuth() {
+        return auth;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public String getArchiveUrl() {
+        return archiveUrl;
+    }
+}

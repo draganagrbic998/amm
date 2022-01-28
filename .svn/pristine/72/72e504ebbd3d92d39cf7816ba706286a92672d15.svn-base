@@ -1,0 +1,51 @@
+package main;
+
+import com.github.drapostolos.rdp4j.spi.FileElement;
+import jcifs.smb.SmbException;
+import jcifs.smb.SmbFile;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.io.IOException;
+
+public class FtpFile implements FileElement {
+
+    private static final Log LOG = LogFactory.getLog(FtpFile.class);
+
+    private final SmbFile file;
+    private final String name;
+    private boolean isDirectory;
+
+    public FtpFile(SmbFile file) {
+        this.file = file;
+        this.name = file.getName();
+        try {
+            this.isDirectory = file.isDirectory();
+        } catch (SmbException e) {
+            this.isDirectory = false;
+            LOG.info("SmbException : " + e.getMessage());
+            LOG.info("SmbException - SMB Directory not found" + file.getPath() + " file name : " + file.getName());
+        }
+    }
+
+    @Override
+    public long lastModified() throws IOException {
+        return file.lastModified();
+    }
+
+    @Override
+    public boolean isDirectory() {
+        return isDirectory;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return file.toString();
+    }
+
+}

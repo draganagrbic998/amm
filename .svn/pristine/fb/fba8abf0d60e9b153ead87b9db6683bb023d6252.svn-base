@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="Adapter:ejb">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Adapter</module>
+        <packaging>ejb</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Adapter-1.0-SNAPSHOT.jar">
+      <element id="artifact" artifact-name="Adapter:ejb exploded" />
+    </root>
+  </artifact>
+</component>
